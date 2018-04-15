@@ -1,0 +1,14 @@
+Hi Anay,
+  Here are the list of sub-tasks which I have divided the main task into. This is just for your reference. Feel free to choose and work on it in any order. 
+
+Week 1 - Creating a Class Diagram, Sequence Diagram using Javascript
+
+Week 2 - State chart in Javascript
+
+Week 3 - Drag and drop constructs of a Class Diagram, sequence diagram into a toolbox
+
+Week 4 - Drag and drop constructs of a Class Diagram, sequence diagram into a toolbox, statechart
+
+For our meeting on Tuesday, you can start by looking at GoJS - https://gojs.net/latest/index.html - specifically the Class Diagram, Sequence Diagram and the state chart
+
+A major issue to be resolved is the drag and drop issue. From your initial explorations, see if the drag and drop functionality can be done in GoJS itself. 
