@@ -1,0 +1,19 @@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="dragdiv.js"></script>
+<link rel="stylesheet" type="text/css" href="dragdiv.css">
+<body><div id="container">
+<div id="drag1" class="draggable"><div id="drag1header" class="draggableheader">Hello watch me draggggg</div>Heyyy</div>
+<div id="drag2" class="draggable"><div id="drag2header" class="draggableheader">Hello watch me draggggg</div>Heyyy</div>
+<div id="drag3" class="draggable"><div id="drag3header" class="draggableheader">Hello watch me draggggg</div>Heyyy</div>
+<svg width="5000" height="5000">
+<line id="c13" stroke="black"></line>
+<line id="c12" stroke="black"></line>
+<line id="c23" stroke="black"></line>
+</svg>
+</div>
+</body>
+
+<script>
+var dragCount=3;
+addDrag(dragCount);
+</script>

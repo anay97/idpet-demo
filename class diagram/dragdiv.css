@@ -1,0 +1,19 @@
+.draggable{
+    position: absolute;
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    text-align: center;
+	display:block;
+	left:0;
+	top:0;
+}
+.draggableheader {
+    cursor: move;
+	padding:10px;
+    background-color: #2196F3;
+    color: #fff;
+	border-bottom:1px solid black;
+}
+.data-members{
+	border-bottom:1px solid black;
+}

@@ -1,0 +1,15 @@
+.draggable{
+    position: absolute;
+    background-color: #f1f1f1;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+	display:block;
+	left:0;
+	top:0;
+}
+.draggableheader {
+    cursor: move;
+	padding:10px;
+    background-color: #2196F3;
+    color: #fff;
+}
