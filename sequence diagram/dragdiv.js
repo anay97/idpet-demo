@@ -1,4 +1,5 @@
 distanceOffset={};
+distanceOffset.loc=0;
 function addDrag(dragCount){
 for(i=1;i<=dragCount;i++){
 dragElement(document.getElementById("drag"+i));
@@ -30,30 +31,7 @@ var centerX = offset.left + width / 2;
 var centerY = offset.top + height / 2;
 return centerY;
 }
-function drawAllArrows(){
-	var list=['12'];
-	for(i=0;i<list.length;i++){
-		var a=parseInt(list[i].charAt(0));
-		var b=parseInt(list[i].charAt(1));
-		drawCurve(a,b);
-	}
-}
-function drawAllTexts(){
-	var list=['121'];
-	for(var i=0;i<list.length;i++){
-		var a=parseInt(list[i].charAt(0));
-		var b=parseInt(list[i].charAt(1));
-		drawText(a,b,list[i]);
-	}
-}
-function drawAllReversibleTexts(){
-	var list=['221'];
-	for(var i=0;i<list.length;i++){
-		var a=parseInt(list[i].charAt(0));
-		var b=parseInt(list[i].charAt(1));
-		drawReverseText(a,b,list[i]);
-	}
-}
+
 function drawAllReversedArrows(){
 	var list=['221'];
 	for(i=0;i<list.length;i++){
@@ -71,16 +49,23 @@ function drawCondition(l){
 	$('#cond'+l).css('left',centerX+'px');
 }
 function drawText(i,j,id){
-	var div1=$("#a"+i+''+j);
+	var div1=$("#a"+id);
 	var txt=$('#at'+id);
 	centerX1=getCenterX(div1);
 	centerY1=getCenterY(div1);
 	var mXY=(getMXY(div1.attr('d'))).split(',');//Has MoveTo of line so it can be directly used
 	var mX=parseInt(mXY[0].substr(2));
 	var mY=mXY[1];
-	txt.attr('x',mX+5);
+	if(parseInt(i)>parseInt(j)){
+	mX-=200;
+	txt.attr('x',mX);
+	console.log(i+''+j);
+	}
+	else{
+		txt.attr('x',mX+5);
+	}
 	if(!distanceOffset.loc){
-		txt.attr('x',mY+5);
+		txt.attr('y',mY-5);
 	}
 	else{
 	txt.attr('y',distanceOffset.loc-2);
@@ -122,13 +107,13 @@ function getMXY(a){
 		}
 	}
 }
-function drawCurve(i,j){
+function drawCurve(i,j,id){
 	var div1=$("#c"+i+''+i);
 	var div2=$("#c"+j+''+j);
-	var arrowedLine=$('#a'+i+''+j);
+	var arrowedLine=$('#a'+id);
 	centerX1=getCenterX(div1);
 	centerX2=getCenterX(div2);
-	if(!distanceOffset.loc){
+	if(distanceOffset.loc==0){
 	centerY1=getCenterY(div1);
 	centerY2=getCenterY(div2);	
 	}
