@@ -1,0 +1,182 @@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="dragdiv.js"></script>
+<link rel="stylesheet" type="text/css" href="dragdiv.css">
+<div id="container">
+<div id="c1" class="element">:User</div>
+<div id="c2" class="element">:Controller</div>
+<div id="c3" class="element">:Passcode</div>
+<div id="c4" class="element">:Door</div>
+<div id="cond21" class="element condition">{if(optionSelected=="lock")}</div>
+<div id="cond22" class="element condition">{if(result==true)}</div>
+<div id="cond23" class="element condition">{if(result==false)}</div>
+<svg width="5000" height="5000">
+<line id="c11" x1="0" y1="0" x2="500" y2="500"  stroke="red" stroke-width="1.5" stroke-dasharray="5,5" d="M5 20 l215 0"></line>
+<line id="c22" stroke="red" stroke-width="1.5" stroke-dasharray="5,5" d="M5 20 l215 0"></line>
+<line id="c33" stroke="red" stroke-width="1.5" stroke-dasharray="5,5" d="M5 20 l215 0"></line>
+<line id="c44" stroke="red" stroke-width="1.5" stroke-dasharray="5,5" d="M5 20 l215 0"></line>
+<!--arrowedhead-->
+<marker id='head' orient="auto"
+    markerWidth='2' markerHeight='4'
+    refX='0.1' refY='2'>
+    <!-- triangle pointing right (+x) -->
+    <path d='M0,0 V4 L2,2 Z' fill="red"/>
+  </marker>
+<!--left line 1-->
+<path
+  id='a12'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="at121">1: Event:User Selects Option Lock</text>
+<!--reversed left arrowed line 2-->
+
+<path
+  id='ar221'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="rat221">2: setOption:(option:String) : String</text>
+
+<!--right line 3-->
+<path
+  id='a21'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="at211">3: MSG:Enter Passcode</text>
+<!--left line 4-->
+<path
+  id='a122'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="at122">4: Event:Enter Passcode</text>
+<!--reverse line 5-->
+<path
+  id='ar222'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="rat222">5: inputPasscode(): String</text>
+
+<!--right line 6-->
+<path
+  id='a23'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="at231">6: checkPasscode(input:String):bool</text>
+<!--left line 7-->
+<path
+  id='a32'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="at321">7: return result</text>
+
+<!--right line 8-->
+<path
+  id='a24'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="at241">8: lock():bool</text>
+
+<!--left line 9-->
+<path
+  id='a42'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="at421">9: return true</text>
+<!--left line 10-->
+<path
+  id='a21'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="at212">10: MSG: Door Locked</text>
+
+<!--right line 11-->
+<path
+  id='a24'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="at242">11: unlock():bool</text>
+
+<!--left line 12-->
+<path
+  id='a42'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="at422">12: return true</text>
+<!--left line 13-->
+<path
+  id='a21'
+  marker-end='url(#head)'
+  stroke-width='1.5'
+  fill='none' stroke='red'
+  />
+<text id="at213">13: MSG: Incorrect Passcode</text>
+</svg>
+
+</div>
+<script>
+drawAllLines();
+drawAllArrows();
+drawAllReversedArrows();
+drawAllTexts();
+drawAllReversibleTexts();
+drawCondition('21');
+drawCurve(2,1);
+drawText('1','2','211');
+
+drawCurve(1,2);
+drawText('1','2','122');
+
+drawReversedArrow('2','2','222');
+drawReverseText('2','2','222');
+
+drawCurve(2,3);
+drawText('2','3','231');
+
+drawCurve(3,2);
+drawText('3','2','321');
+
+drawCondition('22');
+
+drawCurve(2,4);
+drawText('2','4','241');
+
+drawCurve(4,2);
+drawText('4','2','421');
+
+drawCurve(2,1);
+drawText('2','1','212');
+
+drawCondition('23');
+
+drawCurve(2,4);
+drawText('2','4','242');
+
+drawCurve(4,2);
+drawText('4','2','422');
+
+drawCurve(2,1);
+drawText('2','1','213');
+
+</script>
