@@ -1,0 +1,2 @@
+1. You can place multiple MSGs(from the sequence diagram) and functions(from the class diagram) on the arrows of the state diagram
+2. You can place variables in the state diagram. User can have an option to change the value of the variable.
